@@ -74,10 +74,11 @@ header nav {
   /* Hero CSS Start */
 .hero {
     background-image: url("../images/hero-bg.jpg");
-    height: 600px;
     background-size: cover;
     background-position: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   /* Hero Style End */
 
@@ -85,7 +86,6 @@ header nav {
   .hero-form {
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
     color: #024e76;
   }
 
@@ -93,11 +93,7 @@ header nav {
     border: 3px solid #024e76;
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
     color: #024e76;
-    position: absolute;
-    bottom: 120px;
-    right: 140px;
   }
   /* could also do ^ this to combine all 3 for border style
   .hero-form {
@@ -110,7 +106,8 @@ header nav {
     border: 3px solid #024e76;
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
+    width: 40%;
+    margin: 3.5%;
     color: #024e76;
     position: absolute;
     bottom: 0px;
@@ -148,11 +145,23 @@ header nav {
     font-size: 16px;
   }
 
+  .hero-cta {
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .hero-cta h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: #fce138;
+  }
+
  /* WHAT WE DO SECTION 1.4.5 HW */
 
-  .intro {
-    text-align: center;
-  }
 
  /* code deleted because of new CSS rules at botom for .section-title +.primary-border & secondary-border
   .intro h2 {
@@ -194,9 +203,6 @@ header nav {
   .section-title {
     font-size: 55px;
     color: #024e76;
-    margin-bottom: 35px;
-    padding: 0 100px 20px 100px;
-    display: inline-block;
     border-bottom: 3px solid;
     text-align: center;
   }
