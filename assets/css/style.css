@@ -1,16 +1,21 @@
+:root {
+  --primary-color: #fce138;
+  --secondary-color: #024e76;
+  --tertiary-color: #39a6b2;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
   }
 
 header {
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
      /* Makes Header sticky! */
      position: -webkit-sticky;
      position: sticky;
@@ -19,20 +24,22 @@ header {
      background-size: cover;
      background-attachment: fixed;
      background-position: 80%;
+     /* changes stacking order for header to stay at the top */
+     z-index: 9999;
   }
 
 
 header h1 {
   font-weight: bold;
   font-size: 36px;
-  color: #fce138;
+  color: var(--primary-color);
   margin: 0;
   display: inline;
 }
 
 header a {
     text-decoration: none;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 header nav {
@@ -52,7 +59,7 @@ header nav {
   }
 
   footer {
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     display: flex;
@@ -62,7 +69,7 @@ header nav {
 
   footer h2 {
     display: inline;
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0;
   }
@@ -74,7 +81,7 @@ header nav {
   }
 
   footer a {
-    color: #024e76;
+    color: var(--secondary-color);
   }
 
   /* Hero CSS Start */
@@ -91,7 +98,7 @@ header nav {
 
   /* Hero Form CSS */
   .hero-form {
-    background-color: #fce138;
+    background-color: var(--primary-color);
     padding: 20px;
     width: 500px;
     color: #024e76;
@@ -99,11 +106,11 @@ header nav {
   }
 
   .hero-form {
-    border: 3px solid #024e76;
-    background-color: #fce138;
+    border: 3px solid var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 20px;
     width: ;
-    color: #024e76;
+    color: var(--secondary-color);
     position: absolute;
     bottom: 120px;
     right: 140px;
@@ -117,11 +124,11 @@ header nav {
 */
 
 .hero-form {
-    border: 3px solid #024e76;
-    background-color: #fce138;
+    border: 3px solid var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 20px;
     width: 500px;
-    color: #024e76;
+    color: var(--secondary-color);
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -137,11 +144,11 @@ header nav {
   }
 
   .form-input {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -158,8 +165,8 @@ header nav {
   }
 
   .hero-form button {
-    color: #fce138;
-    background-color: #024e76;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -167,7 +174,7 @@ header nav {
   }
 
   .hero-form button:hover {
-    background-color: #39a6b2;  
+    background-color: var(--tertiary-color);  
   }
 
   .hero-cta {
@@ -195,7 +202,7 @@ header nav {
 
   .intro p {
     line-height: 1.7;
-    color: #39a6b2;
+    color: var(--tertiary-color);
     width: 80%;
     font-size: 20px;
 /* for centering a block element with a width of less than 100%: margin: 0 auto;. */
@@ -206,7 +213,7 @@ header nav {
  
   .steps { 
     text-align: center;
-    background: #fce138;
+    background: var(--primary-color);
   }
 
   /* .step:last-child {
@@ -214,7 +221,7 @@ header nav {
   } */
 
   .step:not(:last-child) {
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
   }
 
 
@@ -230,7 +237,7 @@ header nav {
 
   .section-title {
     font-size: 48px;
-    color: #024e76;
+    color: var(--secondary-color);
     margin-bottom: 35px;
     padding: 0 100px 20px 100px;
     display: inline-block;
@@ -243,11 +250,11 @@ header nav {
   }
   
   .primary-border {
-    border-color: #fce138;
+    border-color: var(--primary-color);
   }
   
   .secondary-border {
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
   }
 
   .steps div {
@@ -260,13 +267,13 @@ header nav {
   } 
   
   .steps h3 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 46px;
     margin-top: 10px;
   }
   
   .steps p {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-size: 23px;
   }
 
@@ -297,8 +304,8 @@ header nav {
 .trainer {
     width: 900px;
     margin: 0 auto 30px auto;
-    background: #024e76;
-    color: #fce138;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     overflow: auto;
   }
 
@@ -341,11 +348,11 @@ header nav {
   /* Section 1.6.5.5 Contact us & Map Section*/
 .contact {
     text-align:center;
-    background: #024e76;
+    background: var(--secondary-color);
 }
 
 .contact h2 {
-  color: #fce138;
+  color: var(--primary-color);
 }
 
 .contact-info iframe {
@@ -362,7 +369,7 @@ header nav {
     color: white;
 }
 .contact-info h2 {
-  color: #fce138;
+  color: var(--primary-color);
 }
 .contact-info h3 {
   color: #fce1338;
@@ -376,7 +383,7 @@ header nav {
 }
 
 .contact-info a {
-  color: #fce138;
+  color: var(--primary-color);
 }
 
 .contact-info {
@@ -396,11 +403,11 @@ header nav {
 }
 
 .contact-form input, .contact-form textarea {
-border: 1px solid #024e76;
+border: 1px solid var(--secondary-color);
 display: block;
 padding: 7px 15px;
 font-size: 16px;
-color: #024e76;
+color: var(--secondary-color);
 width: 100%;
 margin-bottom: 15px;
 margin-top: 5px;
@@ -417,8 +424,8 @@ outline: none;
 .contact-form button {
 width: 100%;
 border: none;
-background: #fce138;
-color: #024e76;
+background: var(--primary-color);
+color: var(--secondary-color);
 text-align: center;
 padding: 15px 0;
 font-size: 16px;
@@ -426,8 +433,8 @@ border-radius: 10px;
 }
 
 .contact-form button:hover {
-  color: #fce138;
-  background: #39a6b2;
+  color: var(--primary-color);
+  background: var(--tertiary-color);
 }
 
 .grid-container {
@@ -437,7 +444,7 @@ border-radius: 10px;
 }
 /* SERVICE Grid STYLES BEGIN */
 .services {
-  background: #fce138; 
+  background: color: var(--primary-color);
 }
 
 .service-grid-wrapper {
@@ -452,14 +459,14 @@ border-radius: 10px;
   /* repeat(iterator, size) */
   grid-template-columns: 1fr repeat(2, 4fr);
   grid-template-rows: repeat(5, 1fr) 2fr;
-  border: 2px solid #024e76;
-  color:  #024e76;
+  border: 2px solid var(--secondary-color);
+  color:  var(--secondary-color);
   font-size: 1.2rem;
 }
 
 .service-grid-item {
   padding: 15px 0;
-  border: 2px solid #024e76;
+  border: 2px solid var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -491,6 +498,66 @@ border-radius: 10px;
   box-shadow: 5px 10px 15px black;
 }
 
+ /* styles checkbox with opaque */
+.checkbox-wrapper input, .radio-wrapper input {
+  opacity: 0;
+}
+/* styles the checked boxes */
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+  position: relative;
+  left: 10px;
+  margin: 10px;
+  line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);  
+  border: 1px solid var(--secondary-color);  
+  position: absolute;
+  top: -4px;
+  left: -30px;
+}
+.radio-wrapper label::before {
+  border-radius: 50%;
+}
+
+.radio-wrapper label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  position: absolute;
+  left: -29px;
+  top: -3px;
+}
+
+.checkbox-wrapper label::after {
+  content: "";
+  height: 6px;
+  width: 14px;
+  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  position: absolute;
+  left: -26px;
+  top: 1px;
+  transform: rotate(-58deg);
+  background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color)
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
@@ -517,8 +584,8 @@ border-radius: 10px;
   }
 
   header nav ul li a:hover {
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
   }
