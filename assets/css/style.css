@@ -11,8 +11,16 @@ body {
 header {
     padding: 20px 35px;
     background-color: #39a6b2;
+     /* Makes Header sticky! */
+     position: -webkit-sticky;
+     position: sticky;
+     top: 0;
+     background-image: url("../images/hero-bg.jpg");
+     background-size: cover;
+     background-attachment: fixed;
+     background-position: 80%;
   }
-  /* How to structure a comment on CSS! */
+
 
 header h1 {
   font-weight: bold;
@@ -74,7 +82,8 @@ header nav {
     background-image: url("../images/hero-bg.jpg");
     height: 600px;
     background-size: cover;
-    background-position: center;
+    background-position: 80%;
+    background-attachment: fixed;
     position: relative;
     align-items: flex-start;
   }
@@ -86,6 +95,7 @@ header nav {
     padding: 20px;
     width: 500px;
     color: #024e76;
+    box-shadow: 0 0 10px rgba(252, 225, 56, 0.8);
   }
 
   .hero-form {
@@ -97,6 +107,7 @@ header nav {
     position: absolute;
     bottom: 120px;
     right: 140px;
+    border-radius: 15px;
   }
   /* could also do ^ this to combine all 3 for border style
   .hero-form {
@@ -133,6 +144,13 @@ header nav {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
+  .form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
   }
 
   .hero-form label {
@@ -145,6 +163,11 @@ header nav {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .hero-form button:hover {
+    background-color: #39a6b2;  
   }
 
   .hero-cta {
@@ -180,10 +203,21 @@ header nav {
   }
 
   /* Section 1.4.6 - Styling What You Do */
+ 
   .steps { 
     text-align: center;
     background: #fce138;
   }
+
+  /* .step:last-child {
+    border-bottom: 1px solid #39a6b2;
+  } */
+
+  .step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+  }
+
+
 
   /* deleted read: introh2 for clarity as to why" .steps h2 {
     font-size: 55px;
@@ -370,6 +404,14 @@ color: #024e76;
 width: 100%;
 margin-bottom: 15px;
 margin-top: 5px;
+border-radius: 10px;
+background-color: rgba(255,255,255, 1);
+outline: none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 .contact-form button {
@@ -380,7 +422,14 @@ color: #024e76;
 text-align: center;
 padding: 15px 0;
 font-size: 16px;
+border-radius: 10px;
 }
+
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
+
 .grid-container {
   place-items: <align-items>  <justify-items>;
 }
@@ -436,16 +485,24 @@ font-size: 16px;
   font-weight: bold;
 }
 
+.some-class {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ /* same thing: text-shadow: 5px 10px 15px black; */
+  box-shadow: 5px 10px 15px black;
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
     padding-bottom: 0;
     justify-content: center;
+    position: relative;
   }
 
   header h1 {
     width: 100%;
     text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   header nav ul {
@@ -456,6 +513,14 @@ font-size: 16px;
 
   header nav ul li a {
     font-size: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
   }
 
   footer h2, footer div {
@@ -468,6 +533,10 @@ font-size: 16px;
   
   .hero-cta {
     text-align: center;
+  }
+
+  .hero-cta h2 {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   .section-title {
     width: 80%;
@@ -483,11 +552,8 @@ font-size: 16px;
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
+
 @media screen and (max-width: 768px) {
-  section {
-    padding: 30px 15px;
-  }
-  @media screen and (max-width: 768px) {
 
     section {
       padding: 30px 15px;
@@ -513,8 +579,42 @@ font-size: 16px;
   
     .step-text {
       flex: 100%;  
-    }
-}
+      .service-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-grid-item.basic {
+    grid-column: 1;
+  }
+
+  .service-grid-item.both {
+    grid-column: 1 / -1;
+  }
+
+  .service-grid-item.cancel {
+    transform: none;
+    writing-mode: unset;
+    grid-column: 1 / -1;
+    grid-row: -1;
+  }
+  .service-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-grid-item.basic {
+    grid-column: 1;
+  }
+
+  .service-grid-item.both {
+    grid-column: 1 / -1;
+  }
+
+  .service-grid-item.cancel {
+    transform: none;
+    writing-mode: unset;
+    grid-column: 1 / -1;
+    grid-row: -1;
+  }
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
